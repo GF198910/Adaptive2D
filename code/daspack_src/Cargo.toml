@@ -1,0 +1,43 @@
+[package]
+name = "daspack"
+version = "0.0.1"
+edition = "2024"
+
+[lib]
+name = "compute"
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["python"]
+python = ["pyo3", "numpy"]
+hdf5 = ["hdf5-sys", "libc"]
+extentropy = ["constriction", "once_cell", "libm"]
+
+
+
+[dependencies]
+pyo3 = { version = "0.25.1", features = ["extension-module"], optional = true}
+ndarray = {version = "0.16.1", features = ["rayon"]}
+numpy = {version = "0.25", optional = true}
+byteorder = "1.5.0"
+rayon = "1.10.0"
+anyhow = "1.0.98"
+thiserror = "2.0.12"
+hdf5-sys = {version = "0.8.1", optional = true}
+libc = {version = "0.2", optional = true}
+constriction =  {version = "0.4.1", optional = true}
+once_cell = {version = "1.21.3", optional = true}
+libm = {version = "0.2.15", optional = true}
+
+[dev-dependencies]
+rand = "0.9.1"
+rand_distr = "0.5.1"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+debug = false
+debug-assertions = false
+overflow-checks = false
+incremental = false

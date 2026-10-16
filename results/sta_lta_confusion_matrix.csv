@@ -1,0 +1,7 @@
+method,matrix,value
+daspack,TP,542
+daspack,FP,17495
+daspack,FN,261
+adaptive_2d_thresh,TP,611
+adaptive_2d_thresh,FP,16632
+adaptive_2d_thresh,FN,192

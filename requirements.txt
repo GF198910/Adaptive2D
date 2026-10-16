@@ -1,0 +1,10 @@
+numpy>=1.26
+pandas>=2.0
+h5py>=3.8
+matplotlib>=3.8
+scipy>=1.11
+hdf5plugin>=4.3
+imagecodecs>=2024.1.1
+# Only needed for prepare_datasets.py (raw data conversion), not for reproducing
+# any table or figure from the released HDF5 files:
+# obspy>=1.4
